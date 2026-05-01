@@ -7,8 +7,8 @@ from email.header import decode_header
 
 
 #credenciais de loggin no email
-email_usuario = "davigeraldino818@gmail.com"
-senha = "gxhi pqrc cnzr zsnz"
+email_usuario = "seuemaial@gmail.com" #aqui cooloque o seu email !!!!
+senha = "suasenha" #aqui coloque a sua senha de app (procure saber sobre senha de app caso voce nao saiba) deve vir algo como "abc def ghij klm"!!!!
 
 #conectando ao servidor de email
 mail = imaplib.IMAP4_SSL("imap.gmail.com")
@@ -19,7 +19,7 @@ mail.login(email_usuario, senha)
 
 #selecionando a caixa de entrada e pegando todos os emails
 mail.select("inbox")
-status, dados = mail.search(None, 'FROM "Biondomanuella53@gmail.com"')
+status, dados = mail.search(None, 'FROM "email@dominio.com"') #aqui coloque o email do remetente que voce quer filtar os dados
 lista_emails = dados[0].split()#transformando a string de emails em uma lista de emails
 
 print (f"Total de emails: {len(lista_emails)}")#len lista == vai perga a quantidade de emails 
